@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Startpage</title>
+        <meta name="description" content="BiRabittoh's plain startpage">
+        <meta name="author" content="BiRabittoh">
+        <base target="_blank">
+    </head>
+    <body style="background-color: black; color: white;">
+        <h1>Welcome back.</h1>
+        <div id="links"></div>
+        <script src="config.js"></script>
+        <script>
+if (theme) {
+    let head = document.getElementsByTagName("head")[0];
+    let css = document.createElement("link");
+    css.type = "text/css";
+    css.rel = "stylesheet";
+    css.href = `themes/${theme}.css`;
+    head.appendChild(css);
+}
+if (categories) {
+    let main = document.getElementById("links");
+    let str = "";
+    let info;
+    categories.forEach(cat => {
+        str += `<h2>${cat.name}</h2>`;
+        cat.links.forEach(link => {
+            info = link.split(/(?<=^\S+)\s/);
+            if(info[0]){
+                str += `<div><a href="${info[0]}">${info[1] ? info[1] : info[0]}</a></div>`
+            }
+        });
+    });
+    main.innerHTML = str;
+}
+        </script>
+    </body>
+</html>

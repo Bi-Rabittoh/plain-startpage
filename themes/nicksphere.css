@@ -1,0 +1,60 @@
+/*
+    nicksphere.com-gmi  Generates a Gemini capsule from existing files
+    Copyright (C) 2021  Nicholas Johnson
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+*/
+
+body {
+    background-color: #000;
+    color: white;
+    padding: 30px;
+    font-family: monospace;
+    font-size: 16px;
+    line-height: 22px;
+    max-width: 960px;  /* mobile-first */
+    margin: 0 auto; /* remove default styling */
+}
+
+h1 { color: red; }
+h2 { color: #66ff00; }
+h3 { color: #FF007F; }
+
+h1:before { content: "# " }
+h2:before { content: "## " }
+h3:before { content: "### " }
+
+h1, h2, h3 {
+    font-size: 20px;
+}
+
+a:before { content: "=> "; }
+
+a {
+    color: #004EFF;
+    text-decoration: none; /* remove default styling */
+}
+
+a:hover {
+    color: black;
+    background-color: #004EFF;
+}
+
+pre {
+    overflow: auto;
+}
+
+p {
+    overflow-wrap: break-word;
+}
